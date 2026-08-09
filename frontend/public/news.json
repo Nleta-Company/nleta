@@ -1,0 +1,62 @@
+[
+  {
+    "id": 4,
+    "date": "20-09-2025",
+    "title": "4 Passengers injured after an escalator at the crowded Rajiv Chowk Metro station",
+    "text": "Four passengers were injured after an escalator malfunctioned at the crowded Rajiv Chowk Metro station. Emergency services quickly responded to evacuate the injured commuters from the affected area.",
+    "state": "Madhya Pradesh",
+    "fatal": 0,
+    "injured": 4,
+    "trapped": 0
+  },
+  {
+    "id": 5,
+    "date": "12-08-2025",
+    "title": "इंदौर में लिफ्ट मैकेनिक की हादसे में मौत",
+    "text": "Indore में लिफ्ट मैकेनिक की हादसे में एक जन की मौत हो गई। स्थानीय अधिकारियों ने घटना की जांच शुरू की है।",
+    "state": "Maharashtra",
+    "fatal": 1,
+    "injured": 0,
+    "trapped": 0
+  },
+  {
+    "id": 6,
+    "date": "05-06-2025",
+    "title": "Maharashtra: Three children rescued after lift malfunctions in Municipal Corporation building in Kasarvadavali",
+    "text": "Three children were trapped and later rescued after a lift malfunctioned inside a Municipal Corporation building in Kasarvadavali, Maharashtra. Fire and rescue personnel broke open the lift shaft to evacuate the children safely.",
+    "state": "Maharashtra",
+    "fatal": 0,
+    "injured": 0,
+    "trapped": 3
+  },
+  {
+    "id": 1,
+    "date": "March 2025",
+    "title": "Woman Injured in Lift Malfunction at Kolkata Mall",
+    "text": "A woman was seriously injured and rushed to hospital after a lift malfunctioned and fell suddenly at a major shopping mall in Kolkata. Emergency teams rescued her from between floors.",
+    "state": "West Bengal",
+    "fatal": 0,
+    "injured": 1,
+    "trapped": 1
+  },
+  {
+    "id": 2,
+    "date": "February 2026",
+    "title": "Lift Cable Snaps at Maharashtra Construction Site, Two Workers Injured",
+    "text": "A lift cable snapped at an under-construction building in Maharashtra, sending the cabin crashing and leaving two construction workers with severe injuries. Site operations were suspended pending investigation.",
+    "state": "Maharashtra",
+    "fatal": 0,
+    "injured": 2,
+    "trapped": 0
+  },
+  {
+    "id": 3,
+    "date": "January 2026",
+    "title": "Hospital Lift Trap in Delhi Sparks Regulatory Crackdown",
+    "text": "A hospital lift in Delhi malfunctioned and trapped six patients and staff for over two hours, prompting local authorities to re-inspect all critical infrastructure lifts across the city. A similar incident in a Telangana metro station compound the concern.",
+    "state": "Delhi",
+    "fatal": 0,
+    "injured": 0,
+    "trapped": 6
+  }
+]

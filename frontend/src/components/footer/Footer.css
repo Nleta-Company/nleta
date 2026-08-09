@@ -1,0 +1,33 @@
+.footer {
+  background: beige;
+  color: black;
+  text-align: center;
+  padding: 1rem 2rem;
+  font-size: 0.9rem;
+  font-weight: 500;
+  border-top: none;
+  width: 100%;
+  position: relative;
+}
+
+.footer-esoe {
+  position: absolute;
+  right: 1.5rem;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #000;
+  letter-spacing: 0.08em;
+}
+
+@media (max-width: 600px) {
+  .footer-esoe {
+    position: static;
+    display: block;
+    text-align: center;
+    transform: none;
+    margin-top: 0.3rem;
+    font-size: 0.75rem;
+  }
+}

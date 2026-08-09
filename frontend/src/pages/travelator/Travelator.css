@@ -1,0 +1,77 @@
+.travelator-hero {
+  text-align: center;
+  padding: 5rem 2rem;
+  background: linear-gradient(135deg, rgba(255,255,255,0.3), rgba(255,255,255,0.1));
+}
+
+.travelator-hero h1 { font-size: 3rem; color: #171145; margin-bottom: 1rem; }
+.travelator-hero p { font-size: 1.2rem; color: #171145; max-width: 800px; margin: 0 auto; }
+
+.travelator-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 3rem 2rem;
+}
+
+.travelator-content p { line-height: 1.9; text-align: justify; margin-bottom: 1.5rem; font-size: 1.1rem; }
+
+.travelator-services {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 3rem 2rem;
+}
+
+.travelator-services h2 { margin-bottom: 2rem; }
+
+.services-cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+}
+
+.service-card-link { text-decoration: none; }
+
+.service-card-big {
+  background-color: #171145;
+  color: #E6ACAC;
+  padding: 3rem 2rem;
+  border-radius: 12px;
+  text-align: center;
+  transition: transform 0.3s, background-color 0.3s;
+  cursor: pointer;
+}
+
+.service-card-big:hover {
+  transform: translateY(-8px);
+  background-color: #2a2060;
+}
+
+.service-card-img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 1.5rem;
+}
+
+.service-card-icon { font-size: 4rem; margin-bottom: 1.5rem; }
+
+.service-card-big h3 { color: #E6ACAC; font-size: 1.8rem; margin-bottom: 1rem; }
+.service-card-big p { color: rgba(230,172,172,0.85); line-height: 1.7; margin-bottom: 1.5rem; }
+
+.learn-more {
+  display: inline-block;
+  padding: 0.6rem 1.5rem;
+  background-color: #FF8C00;
+  color: white;
+  border-radius: 5px;
+  font-weight: 600;
+  transition: background-color 0.3s;
+}
+
+.service-card-big:hover .learn-more { background-color: #FF7F00; }
+
+@media (max-width: 768px) {
+  .travelator-hero h1 { font-size: 2rem; }
+  .services-cards { grid-template-columns: 1fr; }
+}

@@ -1,0 +1,60 @@
+.industry-hero {
+  width: 100%;
+  height: 70vh;
+  overflow: hidden;
+}
+
+.industry-hero-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.industry-section-img {
+  width: 100%;
+  height: 350px;
+  object-fit: cover;
+  display: block;
+  border-radius: 10px;
+  margin-bottom: 2rem;
+}
+
+.industry-section {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 3rem 2rem;
+  border-bottom: 1px solid rgba(23,17,69,0.1);
+}
+
+.industry-section h2 { text-align: left; margin-bottom: 1.5rem; }
+.industry-section h3 { margin-top: 2rem; margin-bottom: 1rem; }
+.industry-section p { line-height: 1.9; text-align: justify; margin-bottom: 1rem; }
+
+.industry-list { padding-left: 2rem; margin: 1rem 0; }
+.industry-list li { line-height: 1.9; margin-bottom: 0.5rem; }
+
+.components-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1rem;
+  margin: 1.5rem 0;
+}
+
+.component-item {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  padding: 0.8rem 1rem;
+  border-left: 3px solid #171145;
+  border-radius: 0 5px 5px 0;
+  transition: border-color 0.3s;
+}
+
+.component-item:hover { border-color: #FF8C00; }
+.component-icon { color: #FF8C00; font-weight: 700; flex-shrink: 0; }
+
+@media (max-width: 768px) {
+  .industry-hero h1 { font-size: 2rem; }
+  .components-grid { grid-template-columns: 1fr; }
+}

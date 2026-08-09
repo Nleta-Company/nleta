@@ -1,0 +1,143 @@
+.inspection-hero {
+  position: relative;
+  overflow: hidden;
+  background: transparent;
+  text-align: center;
+  padding: 4rem 2rem;
+  height: 70vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.inspection-hero h1 { font-size: 3rem; color: #fff; margin-bottom: 1rem; position: relative; z-index: 1; }
+.inspection-hero p { font-size: 1.2rem; color: #f5f0e8; max-width: 800px; margin: 0 auto; position: relative; z-index: 1; }
+
+.inspection-hero-img-bg {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(0.6);
+  z-index: 0;
+}
+
+@media (max-width: 768px) {
+  .inspection-hero { min-height: 200px; padding: 3rem 1rem; }
+  .inspection-hero h1 { font-size: 2rem; }
+}
+
+.inspection-intro {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem 2rem 0;
+}
+
+.inspection-intro p { font-size: 1.1rem; line-height: 1.9; text-align: justify; }
+
+.inspection-layout {
+  max-width: 1200px;
+  margin: 2rem auto;
+  padding: 0 2rem 4rem;
+  display: grid;
+  grid-template-columns: 260px 1fr;
+  gap: 3rem;
+  align-items: start;
+}
+
+.inspection-sidebar {
+  background-color: #171145;
+  border-radius: 10px;
+  padding: 1.5rem;
+  position: sticky;
+  top: 90px;
+}
+
+.inspection-sidebar h3 {
+  color: #ffffff;
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid #ffffff;
+}
+
+.inspection-sidebar ul { list-style: none; padding: 0; margin: 0; }
+
+.inspection-sidebar ul li { margin-bottom: 0.5rem; }
+
+.inspection-sidebar ul li button {
+  width: 100%;
+  text-align: left;
+  padding: 0.75rem 1rem;
+  background: none;
+  border: none;
+  color: #ffffff;
+  cursor: pointer;
+  border-radius: 5px;
+  font-size: 0.95rem;
+  transition: all 0.3s;
+}
+
+.inspection-sidebar ul li button:hover {
+  background-color: rgba(255,255,255,0.1);
+  color: #ffffff;
+}
+
+.inspection-sidebar ul li button.active {
+  background-color: #FF8C00;
+  color: white;
+  font-weight: 600;
+}
+
+.inspection-content h2 { text-align: left; margin-bottom: 1.5rem; }
+.inspection-content h3 { margin-top: 2rem; margin-bottom: 1rem; }
+.inspection-content p { line-height: 1.9; text-align: justify; margin-bottom: 1rem; }
+
+.inspection-points {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.inspection-point {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  padding: 0.8rem 1rem;
+  border-left: 3px solid #171145;
+  border-radius: 0 5px 5px 0;
+  transition: border-color 0.3s;
+}
+
+.inspection-point:hover { border-color: #FF8C00; }
+.point-icon { color: #FF8C00; font-weight: 700; flex-shrink: 0; }
+
+@media (max-width: 768px) {
+  .inspection-hero h1 { font-size: 2rem; }
+  .inspection-layout { grid-template-columns: 1fr; }
+  .inspection-sidebar { position: static; }
+  .inspection-points { grid-template-columns: 1fr; }
+}
+
+.inspection-layout.full-width {
+  grid-template-columns: 1fr;
+}
+
+/* Small Read More Link for State Lift Acts */
+.read-more-link-small {
+  display: inline-block;
+  margin-top: 0.5rem;
+  color: #FF8C00;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
+}
+
+.read-more-link-small:hover {
+  color: #e67e00;
+  text-decoration: underline;
+}
