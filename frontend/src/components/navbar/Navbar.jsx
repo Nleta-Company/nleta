@@ -39,7 +39,7 @@ function Navbar() {
           <li><Link to="/assessments" className={location.pathname === '/assessments' ? 'active' : ''} onClick={() => setMenuOpen(false)}>Projects & Trainings</Link></li>
           <li><Link to="/gallery" className={location.pathname === '/gallery' ? 'active' : ''} onClick={() => setMenuOpen(false)}>Gallery</Link></li>
           <li><Link to="/lift-acts" className={location.pathname === '/lift-acts' ? 'active' : ''} onClick={() => setMenuOpen(false)}>Lift Acts & Standards</Link></li>
-          <li><a href="https://nleta.free.je/login.php" target="_blank" rel="noreferrer" className="nav-dashboard-link">Dashboard</a></li>
+          <li><a href="https://nleta.site.je/login.php" target="_blank" rel="noreferrer" className="nav-dashboard-link">Dashboard</a></li>
         </ul>
       </nav>
     </header>
