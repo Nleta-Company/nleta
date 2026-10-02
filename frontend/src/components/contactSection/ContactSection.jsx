@@ -18,28 +18,92 @@ function ContactSection() {
 
   const [isSubmitting, setIsSubmitting] = useState(false);
 
+
   /*
    * Send email through Node.js + Nodemailer
    */
   const sendNotificationEmail = async () => {
 
-    const response = await fetch('https://nleta-q9ih.vercel.app/api/contact-email', {
-      method: 'POST',
+    const response = await fetch(
+      'https://nleta-q9ih.vercel.app/api/contact-email',
+      {
+        method: 'POST',
 
-      headers: {
-        'Content-Type': 'application/json'
-      },
+        headers: {
+          'Content-Type': 'application/json'
+        },
 
-      body: JSON.stringify({
-        name: form.name,
-        email: form.email,
-        phone: form.phone || 'Not provided',
-        message: form.message
-      })
-    });
+        body: JSON.stringify({
+          name: form.name,
+          email: form.email,
+          phone: form.phone || 'Not provided',
+          message: form.message
+        })
+      }
+    );
 
-    const data = await response.json();
 
+    /*
+     * Read response as TEXT first.
+     *
+     * This prevents:
+     * "Unexpected end of JSON input"
+     *
+     * when backend returns an empty/non-JSON response.
+     */
+    const responseText = await response.text();
+
+    console.log(
+      'Contact API Status:',
+      response.status
+    );
+
+    console.log(
+      'Contact API Response:',
+      responseText
+    );
+
+
+    let data = null;
+
+
+    /*
+     * Convert response to JSON
+     */
+    if (responseText) {
+
+      try {
+
+        data = JSON.parse(responseText);
+
+      } catch (error) {
+
+        console.error(
+          'Invalid JSON response from backend:',
+          responseText
+        );
+
+        throw new Error(
+          `Backend returned an invalid response (${response.status}).`
+        );
+      }
+    }
+
+
+    /*
+     * Handle empty response
+     */
+    if (!data) {
+
+      throw new Error(
+        `Backend returned an empty response (${response.status}).`
+      );
+    }
+
+
+    /*
+     * Handle backend/API error
+     */
     if (!response.ok || !data.success) {
 
       throw new Error(
@@ -47,6 +111,7 @@ function ContactSection() {
         'Failed to send notification email.'
       );
     }
+
 
     return data;
   };
@@ -59,26 +124,34 @@ function ContactSection() {
 
     e.preventDefault();
 
+
+    /*
+     * Prevent multiple submissions
+     */
     if (isSubmitting) {
       return;
     }
 
+
     setIsSubmitting(true);
+
 
     setFormMsg({
       text: '',
       type: ''
     });
 
+
     try {
 
       /*
        * STEP 1
-       * Save directly to Supabase
+       * Save enquiry directly to Supabase
        */
       const { error } = await supabase
         .from('enquiries')
         .insert([form]);
+
 
       if (error) {
         throw error;
@@ -87,14 +160,14 @@ function ContactSection() {
 
       /*
        * STEP 2
-       * Send email through backend
+       * Send email through Node.js + Nodemailer
        */
       await sendNotificationEmail();
 
 
       /*
        * STEP 3
-       * Success
+       * Show success message
        */
       setFormMsg({
         text:
@@ -113,12 +186,14 @@ function ContactSection() {
         message: ''
       });
 
+
     } catch (err) {
 
       console.error(
         'Contact form submission failed:',
         err
       );
+
 
       setFormMsg({
         text:
@@ -127,9 +202,11 @@ function ContactSection() {
         type: 'error'
       });
 
+
     } finally {
 
       setIsSubmitting(false);
+
 
       setTimeout(() => {
 
