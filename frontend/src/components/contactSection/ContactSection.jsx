@@ -23,7 +23,7 @@ function ContactSection() {
    */
   const sendNotificationEmail = async () => {
 
-    const response = await fetch('/api/contact-email', {
+    const response = await fetch('https://nleta-q9ih.vercel.app/api/contact-email', {
       method: 'POST',
 
       headers: {

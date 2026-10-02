@@ -4,7 +4,6 @@ const express = require('express');
 const nodemailer = require('nodemailer');
 const bodyParser = require('body-parser');
 const cors = require('cors');
-const path = require('path');
 const https = require('https');
 
 const app = express();
@@ -52,19 +51,15 @@ transporter.verify((error, success) => {
 });
 
 /* =========================================================
-   SERVE REACT BUILD STATIC FILES
+   BACKEND HEALTH CHECK
 ========================================================= */
 
-app.use(
-    express.static(
-        path.join(
-            __dirname,
-            '..',
-            'frontend',
-            'build'
-        )
-    )
-);
+app.get('/', (req, res) => {
+    res.json({
+        success: true,
+        message: 'NLETA Backend is running'
+    });
+});
 
 /* =========================================================
    OTP SYSTEM
@@ -415,33 +410,23 @@ app.post('/api/contact-email', async (req, res) => {
 });
 
 /* =========================================================
-   ALL OTHER ROUTES
-   SERVE REACT APP
-========================================================= */
-
-app.get('*', (req, res) => {
-
-    res.sendFile(
-        path.join(
-            __dirname,
-            '..',
-            'frontend',
-            'build',
-            'index.html'
-        )
-    );
-});
-
-/* =========================================================
    START SERVER
 ========================================================= */
 
 if (require.main === module) {
+
     app.listen(PORT, () => {
+
         console.log(
             `Server running on http://localhost:${PORT}`
         );
+
     });
 }
+
+/* =========================================================
+   EXPORT EXPRESS APP
+   Required for Vercel
+========================================================= */
 
 module.exports = app;
